@@ -1,0 +1,30 @@
+<!-- editCliente.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Cliente</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- En lugar de enlazar a CDN, puedes enlazar a tu archivo CSS generado si lo prefieres -->
+    <!-- <link href="/styles.css" rel="stylesheet"> -->
+</head>
+<body class="bg-gray-900 text-white flex justify-center items-center h-screen">
+    <div class="container mx-auto px-40">
+        <h1 class="text-3xl font-bold mb-8 text-center">Editar Cliente</h1>
+        <form action="/clientes/<%= cliente.id %>?_method=PUT" method="POST">
+            <div class="mb-4">
+                <label for="nombre" class="block text-sm font-medium">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" value="<%= cliente.nombre %>" required
+                       class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+            </div>
+            <div class="mb-4">
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Guardar Cambios
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
